@@ -1,0 +1,560 @@
+/* Students.css - Professional CRM Theme */
+
+/* Page Container */
+.students-page {
+  min-height: 100vh;
+  padding: 40px 0;
+  background: #f8fafc;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Page Header */
+.page-header {
+  text-align: center;
+  margin-bottom: 60px;
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: white;
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+  opacity: 0.3;
+}
+
+.page-header h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.page-header p {
+  font-size: 1.5rem;
+  opacity: 0.9;
+  position: relative;
+  z-index: 2;
+}
+
+.student-count {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  margin-top: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+  z-index: 2;
+}
+
+/* Students Container */
+.students-container {
+  background: white;
+  border-radius: 20px;
+  padding: 50px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin-bottom: 50px;
+}
+
+.students-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 30px;
+}
+
+/* Student Card */
+.StudentCard {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  border: 1px solid #e9ecef;
+  position: relative;
+  cursor: pointer;
+}
+
+.StudentCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.StudentCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #4facfe, #00f2fe, #ff6b6b, #feca57);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.StudentCard:hover::before {
+  opacity: 1;
+}
+
+/* Student Profile Image */
+.student-profile {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.StudentCard > img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.StudentCard:hover > img {
+  transform: scale(1.05);
+}
+
+/* Student Content */
+.student-content {
+  padding: 30px;
+}
+
+/* Student Header */
+.student-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.StudentCard h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0 0 10px 0;
+  padding: 0 30px;
+}
+
+.student-age {
+  background: linear-gradient(45deg, #4facfe, #00f2fe);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin: 0 30px 15px 30px;
+  display: inline-block;
+}
+
+/* Student Bio */
+.StudentCard > p {
+  font-size: 0.95rem;
+  color: #6c757d;
+  line-height: 1.6;
+  margin: 0 30px 25px 30px;
+  padding: 15px;
+  background: #f8fafc;
+  border-radius: 10px;
+  border-left: 4px solid #4facfe;
+}
+
+/* Section Containers */
+.student-courses-section,
+.student-teachers-section {
+  margin: 0 30px 30px 30px;
+  padding: 20px;
+  background: #f8fafc;
+  border-radius: 15px;
+  border: 1px solid rgba(79, 172, 254, 0.1);
+}
+
+.student-courses-section h2,
+.student-teachers-section h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0 0 20px 0;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(79, 172, 254, 0.2);
+  position: relative;
+}
+
+.student-courses-section h2::after,
+.student-teachers-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+}
+
+/* Course Cards */
+.course-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(79, 172, 254, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.course-card:hover {
+  transform: translateX(5px);
+  box-shadow: 0 8px 25px rgba(79, 172, 254, 0.15);
+  border-color: #4facfe;
+}
+
+.course-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
+.course-card:hover::before {
+  transform: scaleY(1);
+}
+
+.course-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0 0 8px 0;
+}
+
+.course-card p {
+  font-size: 0.9rem;
+  color: #6c757d;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Teacher Cards */
+.teacher-mini-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(79, 172, 254, 0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.teacher-mini-card:hover {
+  transform: translateX(5px);
+  box-shadow: 0 8px 25px rgba(79, 172, 254, 0.15);
+  border-color: #4facfe;
+}
+
+.teacher-mini-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
+.teacher-mini-card:hover::before {
+  transform: scaleY(1);
+}
+
+.teacher-mini-card img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(79, 172, 254, 0.2);
+  transition: border-color 0.3s ease;
+}
+
+.teacher-mini-card:hover img {
+  border-color: #4facfe;
+}
+
+.teacher-info {
+  flex: 1;
+}
+
+.teacher-mini-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0 0 5px 0;
+}
+
+.teacher-mini-card .teacher-description {
+  font-size: 0.9rem;
+  color: #6c757d;
+  line-height: 1.4;
+  margin: 0 0 8px 0;
+}
+
+.teacher-stats {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.teacher-experience {
+  background: rgba(79, 172, 254, 0.1);
+  color: #4facfe;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.teacher-rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(254, 202, 87, 0.1);
+  color: #feca57;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.rating-star {
+  font-size: 0.9rem;
+}
+
+/* Loading Animation */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #e9ecef;
+  border-top: 4px solid #4facfe;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #6c757d;
+}
+
+.empty-state h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.empty-state p {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .page-header {
+    padding: 60px 0;
+  }
+  
+  .page-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .page-header p {
+    font-size: 1.2rem;
+  }
+  
+  .students-container {
+    padding: 30px 20px;
+  }
+  
+  .students-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .StudentCard {
+    margin-bottom: 20px;
+  }
+  
+  .StudentCard h2,
+  .student-age,
+  .StudentCard > p,
+  .student-courses-section,
+  .student-teachers-section {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+  .student-courses-section,
+  .student-teachers-section {
+    padding: 15px;
+  }
+  
+  .teacher-mini-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  
+  .teacher-mini-card img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .teacher-stats {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-header h1 {
+    font-size: 2rem;
+  }
+  
+  .page-header p {
+    font-size: 1rem;
+  }
+  
+  .students-container {
+    padding: 20px 15px;
+    margin: 0 10px;
+  }
+  
+  .StudentCard h2,
+  .student-age,
+  .StudentCard > p,
+  .student-courses-section,
+  .student-teachers-section {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  
+  .student-courses-section,
+  .student-teachers-section {
+    padding: 12px;
+  }
+  
+  .course-card,
+  .teacher-mini-card {
+    padding: 15px;
+  }
+  
+  .teacher-mini-card {
+    gap: 8px;
+  }
+  
+  .teacher-stats {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #4facfe, #00f2fe);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #3d8bfe, #00d4ff);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.StudentCard {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.StudentCard:nth-child(even) {
+  animation-delay: 0.1s;
+}
+
+.course-card,
+.teacher-mini-card {
+  animation: fadeInUp 0.4s ease forwards;
+}
+
+/* Hover Effects */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(79, 172, 254, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(79, 172, 254, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(79, 172, 254, 0);
+  }
+}
+
+.StudentCard:hover {
+  animation: pulse 1.5s infinite;
+}
